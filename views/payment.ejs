@@ -1,0 +1,194 @@
+<!-- payment.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500&display=swap');
+
+    * {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        outline: none;
+        border: none;
+        text-transform: capitalize;
+        transition: all 0.2s linear;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 25px;
+        background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20230523/pngtree-3d-cgi-atm-machine-isolated-on-dark-background-image_2605002.jpg");
+          background-position: center;
+        min-height: 100vh;
+        padding-bottom: 70px;
+    }
+
+    .container form {
+        padding: 20px;
+        width: 700px;
+        background: #fff;
+        box-shadow: 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .container form .row .col {
+        flex: 1 1 250px;
+    }
+
+    .container form .row .col .title {
+        font-size: 20px;
+        color: #333;
+        padding-bottom: 5px;
+        text-transform: uppercase;
+    }
+
+    .container form .row .col .InputBox {
+        margin: 25px 0;
+    }
+
+    .container form .row .col .InputBox span {
+        margin-bottom: 5px;
+        display: block;
+    }
+
+    .container form .row .col .InputBox input {
+        width: 100%;
+        border: 1px solid #ccc;
+        padding: 10px 15px;
+        font-size: 15px;
+        text-transform: none;
+    }
+
+    .container form .row .col .InputBox input:focus {
+        border: 1px solid #000;
+    }
+
+    .container form .row .col .flex {
+        display: flex;
+        gap: 15px;
+    }
+
+    .container form .row .col .flex .InputBox {
+        margin-top: 5px;
+    }
+
+    .container form .row .col .InputBox img {
+        height: 34px;
+        margin-top: 5px;
+        filter: drop-shadow(1px #000);
+    }
+
+    .container form .submit-btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 17px;
+        background: skyblue;
+        color: #fff;
+        margin-top: 5px;
+        cursor: pointer;
+    }
+
+    .container form .submit-btn:hover {
+        background: #2ecc71;
+    }
+    </style>
+       <script>
+        // Function to show the payment success alert
+        function showPaymentSuccessAlert() {
+            alert('Payment Success');
+        }
+
+        // Add an event listener to the "Proceed to Checkout" button
+        document.addEventListener("DOMContentLoaded", function() {
+            const checkoutButton = document.querySelector('.submit-btn');
+            checkoutButton.addEventListener('click', function(event) {
+            
+                event.preventDefault();
+                // Call the function to show the alert
+                showPaymentSuccessAlert();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <form action="">
+            <div class="row">
+                <div class="col">
+                    <h3 class="title">Billing Address</h3>
+                    <div class="InputBox">
+                        <span>Full Name :</span>
+                        <input type="text" placeholder="Enter your name">
+                    </div>
+                    <div class="InputBox">
+                        <span>Email :</span>
+                        <input type="email" placeholder="example@gmail.com">
+                    </div>
+                </div>
+                <div class="col">
+                    <h3 class="title">Payment</h3>
+                    <div class="InputBox">
+                        <span>Cards Accepted :</span>
+                        <img src="https://tse2.mm.bing.net/th?id=0IP.B1PLxd5EsEwcnFycle9mcgHaBh&pid=Api&P=0&h=180">
+                    </div>
+                    <div class= "InputBox">
+                        <span>Card Name :</span>
+                        <input type="text" placeholder="Enter your card name">
+                    </div>
+                    <div class="InputBox">
+                        <span>Credit Card Number :</span>
+                        <input type="text" placeholder="XXXX-XXXX-XXXX-XXXX">
+                    </div>
+                    <div class="InputBox">
+                        <span>Exp Month :</span>
+                        <input type="text" placeholder="Enter expiry month">
+                    </div>
+                    <div class="flex">
+                        <div class="InputBox">
+                            <span>Exp Year :</span>
+                            <input type="text" placeholder="Enter expiry year">
+                        </div>
+                        <div class="InputBox">
+                            <span>CVV :</span>
+                            <input type="text" placeholder="XXXX">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input type="submit" value="Proceed to Checkout" class="submit-btn" id="checkout-button">
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+            const checkoutButton = document.getElementById('checkout-button');
+            checkoutButton.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent the default form submission behavior
+                sendBookingConfirmationEmail();
+            });
+
+            function sendBookingConfirmationEmail() {
+                fetch('/send-booking-email', {
+                    method: 'POST',
+                })
+                .then((response) => {
+                    if (response.ok) {
+                        alert('Booking confirmation email sent.');
+                    } else {
+                        alert('Failed to send booking confirmation email. Please try again.');
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    alert('An error occurred. Please try again later.');
+                });
+            }
+        });
+    </script>
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusRide | CampusRide.com</title>
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" media="screen and (max-width: 1170px )" href="CSS/phone.css">
+    <link
+      rel="icon"
+      href="icon.png"
+    />
+    
+</head>
+
+<body>
+    <nav id="navbar">
+        <div id="logo">
+            <img src="logo.png" alt="CampusRide.com">
+        </div>
+        <ul>
+            <li class="item"><a href="#home">Home</a></li>
+            <li class="item"><a href="/login">Services</a></li>
+            <li class="item"><a href="#client-section">Our Clients</a></li>
+            <li class="item"><a href="#contact">Contact Us</a></li>
+
+        </ul>
+    </nav>
+    <section id="home">
+        <h1 class="h-primary">Welcome to CampusRide</h1>
+        <!-- <p>Welcome to CampusRide, your go-to platform for hassle-free transportation. With our user-friendly app, you can effortlessly find, book, and enjoy rides tailored to your needs. Whether it's a quick commute or a weekend getaway, RideShare has you covered. Get started today and experience convenience like never before.</p>
+        <br>
+        <p>Find your Ride and Share with Others.</p> -->
+        <a href="/register" class="btn" id="btn">Get started</a>
+    </section>
+    <section id="services-container">
+        <h1 class="h-primary centre">Our Services</h1>
+        <div id="services">
+            <div class="box">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMIfRm_w2lmK8y52gPBL71b9aZrdpGGU61ew&usqp=CAU" alt="">
+                <h2 class="h-secondary centre">Ride Hailing</h2>
+                <p class="centre"> The core service allows users to request a ride from their current location to a desired destination. This includes options like standard cars, SUVs, and sometimes even luxury or specialty vehicles.
+                </p>
+            </div>
+            <div class="box">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSkP-oy9oIGFvwFbg_mxkzdsJij7q4ljPTGg&usqp=CAU" alt="">
+                <h2 class="h-secondary centre">Carpooling</h2>
+                <p class="centre">This service enables users heading in the same direction to share a ride and split the fare. It's an eco-friendly option that helps reduce traffic congestion.</p>
+            </div>
+            <div class="box">
+                <img src="https://www.andamanworldtravels.com/images-new/information-1/bike-rental-port-blair-andaman.webp" alt="">
+                <h2 class="h-secondary centre">Bike and Scooter Rentals</h2>
+                <p class="centre"> In addition to cars, ride-sharing apps sometimes offer options for renting bicycles, scooters, or other forms of micro-mobility.</p>
+            </div>
+        </div>
+    </section>
+    <section id="client-section">
+        <h1 class="h-primary centre">Our Clients</h1>
+        <div id="clients">
+            <div class="client-items">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQg7N7MK8bgaPHjXJM8hbDLeF2xGaoKKXEOQ&usqp=CAU" alt="Our Clients">
+            </div>
+            <div class="client-items">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4yqsJ3Tc7-PA-bmH3ucjuvTGfnlilGRdNzQ&usqp=CAU" alt="Our Clients">
+            </div>
+            <div class="client-items">
+                <img src="https://di-uploads-pod5.dealerinspire.com/triplejsaipan/uploads/2018/05/HyundaiLogoStacked_4cblk-1024x659.gif" alt="Our Clients">
+            </div>
+            <div class="client-items">
+                <img src="https://www.shutterstock.com/image-photo/palo-alto-ca-usa-feb-260nw-1649455648.jpg" alt="Our Clients">
+            </div>
+            <div class="client-items">
+        </div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/77/Rakuten_Trade_Company_logo.png" alt="Our Clients">
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <h1 class="h-primary centre">Contact Us</h1>
+        <div id="contact-box">
+            <form action="/submit" method="post">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name" placeholder="Enter your Name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" placeholder="Enter your Email">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" name="phone" id="phone" placeholder="Enter your Phone">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                </div>
+                <div id="form-submit">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="centre">
+            copyright &copy; www.CampusRide.com.All rights reserved!
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html

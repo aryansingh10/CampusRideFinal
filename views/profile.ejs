@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Profile</title>
+    <link rel="icon" href="icon.png" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333333ca;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        main {
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+            min-height: calc(100vh - 54px); /* Account for header and footer heights */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .profile-info {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .profile-info h2 {
+            font-size: 24px;
+        }
+
+        .profile-info p {
+            font-size: 18px;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            background-color: #333333db;
+            color: white;
+            text-align: center;
+            width: 100%;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Profile</h1>
+    </header>
+    <main>
+        <div class="container">
+            <div class="profile-info">
+                <h2><%= currentUser.name %></h2>
+                <p>Username: <%= currentUser.username %></p>
+                <p>Email: <%= currentUser.email %></p>
+            </div>
+        </div>
+        <div class="logout">
+            <button>  <a href="/">logout</a></button>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 Ride Sharing App. All rights reserved.</p>
+    </footer>
+</body>
+</html>
